@@ -1,0 +1,172 @@
+  html {
+      font-size: 62.5%;
+  }
+
+  body > div {
+      min-width: 150rem;
+
+  }
+
+  header {
+      background-image: url(../image/head.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-color: white;
+      height: 20rem;
+  }
+
+  header > div {
+      width: 30rem;
+      margin: 0 auto;
+  }
+
+  main {}
+
+  #searchDiv {
+      text-align: center;
+      background-color: #f5f5f5;
+      height: 5rem;
+  }
+
+  #searchDiv > span {
+      line-height: 5rem;
+      font-size: 2.5rem;
+
+
+  }
+
+  #tableDiv {
+      padding: 1rem;
+      background-color: white;
+
+  }
+
+  #tableDiv > table {
+
+      width: 150rem;
+      text-align: center;
+      margin: 0 auto;
+      font-size: 1.7rem;
+      line-height: 3rem;
+      background-color: #f9fafb;
+
+  }
+
+  tr,
+  td {
+      border: 1px solid gray;
+
+      border-collapse: collapse;
+      border-right: none;
+      border-left: none;
+
+  }
+td>span{
+    display: block;
+    
+    text-align: right;
+}
+
+  tr:nth-of-type(2n) {
+      background-color: white;
+  }
+tr:nth-of-type(2n-1) {
+      height: 5rem;
+    line-height: 5rem;
+  }
+tr>#contents{
+    height: 50rem;
+}
+
+  main > #directionDiv {
+  	  width: 150rem;
+      height: 10rem;
+      text-align: right;
+      margin: 0 auto; 
+       
+  }
+
+  main > #directionDiv > button {
+      width: 8rem;
+      height: 4rem;
+      font-size: 1.7rem; 
+      color: gray;
+      margin: 1rem;
+
+  }
+
+
+
+
+  footer {
+      background-color: gray;
+      height: 20rem;
+      display: flex;
+  }
+
+  footer > img {
+      flex: 0 0 5%;
+      margin-top: 5rem;
+
+
+
+
+  }
+
+  footer > div:first-of-type {
+      position: relative;
+
+      flex: 0 0 45%;
+  }
+
+  footer > div:first-of-type > ul {
+      margin: 0 auto;
+      font-size: 1.5rem;
+      width: 60rem;
+      height: 18rem;
+
+  }
+
+  footer > div:first-of-type > ul > li {
+      color: rgb(197, 174, 18);
+      padding: 1.5rem 0rem 1.5rem 0rem;
+
+  }
+
+  footer > div:first-of-type > ul > li > span {
+
+      color: darkmagenta;
+  }
+
+  footer > div:first-of-type > span {
+      position: absolute;
+      right: -9rem;
+  }
+
+  footer > div:last-of-type {
+
+      flex: 0 0 50%;
+  }
+
+  /*        ---*/
+  footer > div:last-of-type > ul {
+      margin-left: 10rem;
+
+      font-size: 1.5rem;
+      width: 60rem;
+
+      height: 18rem;
+
+  }
+
+  footer > div:last-of-type > ul > li {
+      color: darkmagenta;
+      padding: 1.5rem 0rem 1.5rem 0rem;
+
+  }
+
+  footer > div:last-of-type > ul > li > a {
+      text-decoration: none;
+      color: lightgray;
+
+  }
