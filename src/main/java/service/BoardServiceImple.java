@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import criTest.SearchCri;
 import jdbcUtil.BoardDAO;
 import vo.NBoardVO;
+import vo.NCVO;
 
 @Service
 public class BoardServiceImple implements BoardService {
@@ -27,6 +28,16 @@ public class BoardServiceImple implements BoardService {
 	@Override
 	public NBoardVO nbdetail(NBoardVO vo) {
 		return dao.nbdetail(vo);
+	}
+
+	@Override
+	public List<NCVO> clist(NBoardVO vo) {
+		return dao.clist(vo);
+	}
+
+	@Override
+	public int nbcinsert(NCVO cvo) {
+		return dao.nbcinsert(cvo);
 	}
 
 }

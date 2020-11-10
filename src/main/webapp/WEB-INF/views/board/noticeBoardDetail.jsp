@@ -20,7 +20,7 @@
                 <img src="resources/image/hoseologo2.png">
             </div>
         </header>
-        <main>
+         <main>
             <div id="searchDiv">
 
                 <span>Q&A</span>
@@ -40,16 +40,37 @@
                     </tr>
                     <tr>
                         <td id="contents">
-                           <span>글쓴이:${vo.studentId} 작성일: ${vo.regDate}</span>
-                           ${vo.contents}
+                            <span>글쓴이:${vo.studentId} 작성일: ${vo.regDate}</span>
+                            ${vo.contents}
                         </td>
                     </tr>
                 </table>
             </div>
             <div id="directionDiv">
+                <span>댓글</span>
                 <button onclick="location.href='nblist'">목록</button>
                 <button>수정</button>
                 <button>삭제</button>
+            </div>
+            <div id="commentDiv">
+            <c:forEach items="${clist}" var="clist">
+                <table>
+                    <tr>
+                        <td>${clist.studentId }<span>${clist.regDate}</span></td>
+                    </tr>
+                    <tr>
+                        <td>${clist.contents}</td>
+                    </tr>
+                </table>
+                </c:forEach>
+            </div>
+            <div id="commentInsertDiv">
+                <form action="nbcinsert"> 
+                    <input type="text" placeholder="아이디" name="studentId"><br>
+                    <input type="text" placeholder="악성댓글 ㄴㄴ"name="contents">
+                    <input type="submit" value="작성">
+                    
+                </form>
             </div>
 
         </main>

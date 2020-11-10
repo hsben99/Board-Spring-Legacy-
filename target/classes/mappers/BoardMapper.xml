@@ -36,4 +36,12 @@
 		select * from boardNotice where seq = #{seq}
 	</select>
 	
+	<select id="clist" resultType="vo.NCVO">
+	select * from boardComment where seq = #{seq}
+	</select>
+	
+	<insert id="nbcinsert">
+	insert into boardComment values(
+	#{seq}, #{studentId}, #{contents},sysdate	)
+	</insert>
 </mapper>

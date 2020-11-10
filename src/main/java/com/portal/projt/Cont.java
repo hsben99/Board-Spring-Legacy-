@@ -9,6 +9,7 @@ import criTest.PageMaker;
 import criTest.SearchCri;
 import service.BoardService;
 import vo.NBoardVO;
+import vo.NCVO;
 
 @Controller
 public class Cont {
@@ -16,23 +17,37 @@ public class Cont {
 	BoardService service;
 
 	@RequestMapping(value = "/nblist")
-	public ModelAndView nblist(ModelAndView mv,SearchCri cri,PageMaker pm) {
+	public ModelAndView nblist(ModelAndView mv, SearchCri cri, PageMaker pm) {
 		cri.setSnoEno();
-		mv.addObject("list",service.nblist(cri));
+		mv.addObject("list", service.nblist(cri));
 		pm.setCri(cri);// 바뀐페이지 정보를 가지고 있는 cri 를 pm에 넣어주는것
 		pm.setLastPage(service.total(cri));
 		mv.addObject("pm", pm);
 		mv.setViewName("board/noticeBoardList");
 		return mv;
 	}
-	
 
 	@RequestMapping(value = "/nbdetail")
-	public ModelAndView nbdetail(ModelAndView mv,NBoardVO vo) {
+	public ModelAndView nbdetail(ModelAndView mv, NBoardVO vo, NCVO cvo) {
 		vo = service.nbdetail(vo);
+
+		mv.addObject("clist", service.clist(vo));
 		mv.addObject("vo", vo);
 		mv.setViewName("board/noticeBoardDetail");
 		return mv;
 	}
-	
+
+	@RequestMapping(value = "/nbcinsert")
+	public ModelAndView nbcinsert(ModelAndView mv, NCVO cvo, NBoardVO vo) {
+		// 파라미터로 넘어온 studentId, contents, seq가 NBoardVO에 맵핑되나? NCVO에 맵핑되나?
+		// 일단 cvo에도 맵핑된다고 생각하고 해보기
+
+		System.out.println(cvo);
+		System.out.println(vo); 
+
+		service.nbcinsert(cvo);
+		mv.setViewName("redirect:/nbdetail?seq=" + cvo.getSeq());
+		return mv;
+	}
+
 }

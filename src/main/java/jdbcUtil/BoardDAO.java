@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import criTest.SearchCri;
 import vo.NBoardVO;
+import vo.NCVO;
 
 @Repository
 public class BoardDAO {
@@ -25,6 +26,14 @@ public class BoardDAO {
 
 	public NBoardVO nbdetail(NBoardVO vo) {
 		return sqlSession.selectOne(NS + "nbdetail", vo);
+	}
+
+	public List<NCVO> clist(NBoardVO vo) {
+		return sqlSession.selectList(NS+"clist",vo);
+	}
+
+	public int nbcinsert(NCVO cvo) {
+		return sqlSession.insert(NS+"nbcinsert",cvo);
 	}
 
 }

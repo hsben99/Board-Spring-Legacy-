@@ -4,6 +4,7 @@ import java.util.List;
 
 import criTest.SearchCri;
 import vo.NBoardVO;
+import vo.NCVO;
 
 public interface BoardService {
 
@@ -13,4 +14,10 @@ public interface BoardService {
 	public int total(SearchCri cri);
 	
 	public NBoardVO nbdetail(NBoardVO vo);
+
+
+	public List<NCVO> clist(NBoardVO vo);
+
+
+	public int nbcinsert(NCVO cvo);
 }
