@@ -23,7 +23,7 @@
          <main>
             <div id="searchDiv">
 
-                <span>Q&A</span>
+                <span>공지사항</span>
 
             </div>
             <div id="tableDiv">
@@ -49,8 +49,8 @@
             <div id="directionDiv">
                 <span>댓글</span>
                 <button onclick="location.href='nblist'">목록</button>
-                <button>수정</button>
-                <button>삭제</button>
+                <button onclick="location.href='nbupdatef?seq=${vo.seq}'">수정</button>
+                <button onclick="location.href='nbdelete?seq=${vo.seq}'">삭제</button>
             </div>
             <div id="commentDiv">
             <c:forEach items="${clist}" var="clist">
@@ -65,7 +65,8 @@
                 </c:forEach>
             </div>
             <div id="commentInsertDiv">
-                <form action="nbcinsert"> 
+                <form action="nbcinsert">
+                	<input type="hidden" value="${vo.seq}" name="seq"> 
                     <input type="text" placeholder="아이디" name="studentId"><br>
                     <input type="text" placeholder="악성댓글 ㄴㄴ"name="contents">
                     <input type="submit" value="작성">

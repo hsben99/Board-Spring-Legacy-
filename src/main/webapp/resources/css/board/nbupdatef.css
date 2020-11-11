@@ -1,8 +1,7 @@
-/*body,
+ /* body,
 td {
     background-color: darkslategray;
-}*/
-
+} */ 
 
 html {
     font-size: 62.5%;
@@ -44,11 +43,11 @@ main {}
 
 #tableDiv {
     padding: 1rem;
-    background-color: white;
+    background-color: white; 
 
 }
 
-#tableDiv > table {
+#tableDiv>form> table { 
 
     width: 150rem;
     text-align: center;
@@ -57,6 +56,9 @@ main {}
     line-height: 3rem;
     background-color: #f9fafb;
 
+}
+#tableDiv>form> table textarea{
+	font-size: 2.5rem;
 }
 
 tr,
@@ -72,6 +74,16 @@ td {
 #tableDiv td > span {
     display: block;
     text-align: right;
+}
+
+#tableDiv>form> table + input{
+	display: block;
+	width: 8rem;
+    height: 4rem;
+    font-size: 1.7rem;
+    color: gray;
+	margin:  0 auto;
+	
 }
 
 tr:nth-of-type(2n) {

@@ -41,7 +41,28 @@
 	</select>
 	
 	<insert id="nbcinsert">
-	insert into boardComment values(
-	#{seq}, #{studentId}, #{contents},sysdate	)
+		insert into boardComment values(
+		#{seq}, #{studentId}, #{contents},sysdate	)
 	</insert>
+	
+	<delete id="nbdelete" >
+	 delete boardNotice where seq = #{seq}
+	</delete>
+	
+	<update id="nbupdate">
+		UPDATE boardNotice SET title = #{title},	contents = #{contents}	where seq= #{seq}
+	</update>
+	
+	<insert id="nbinsert">
+		insert into boardNotice values(
+		(select nvl(max(seq),0)+1 from boardNotice),
+		#{title},
+		#{contents},
+		SYSDATE,
+		0,
+		#{studentId},
+		'A') 
+	</insert>
+	
+	
 </mapper>

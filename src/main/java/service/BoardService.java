@@ -20,4 +20,13 @@ public interface BoardService {
 
 
 	public int nbcinsert(NCVO cvo);
+
+
+	public int nbdelete(NBoardVO vo);
+
+
+	public int nbupdate(NBoardVO vo);
+
+
+	public int nbinsert(NBoardVO vo);
 }

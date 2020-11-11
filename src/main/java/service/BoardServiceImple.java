@@ -40,4 +40,19 @@ public class BoardServiceImple implements BoardService {
 		return dao.nbcinsert(cvo);
 	}
 
+	@Override
+	public int nbdelete(NBoardVO vo) {
+		return dao.nbdelete(vo);
+	}
+
+	@Override
+	public int nbupdate(NBoardVO vo) {
+		return dao.nbupdate(vo);
+	}
+
+	@Override
+	public int nbinsert(NBoardVO vo) {
+		return dao.nbinsert(vo);
+	}
+
 }

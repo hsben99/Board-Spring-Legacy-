@@ -20,7 +20,7 @@ public class Cont {
 	public ModelAndView nblist(ModelAndView mv, SearchCri cri, PageMaker pm) {
 		cri.setSnoEno();
 		mv.addObject("list", service.nblist(cri));
-		pm.setCri(cri);// ¹Ù²ïÆäÀÌÁö Á¤º¸¸¦ °¡Áö°í ÀÖ´Â cri ¸¦ pm¿¡ ³Ö¾îÁÖ´Â°Í
+		pm.setCri(cri);// ï¿½Ù²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ cri ï¿½ï¿½ pmï¿½ï¿½ ï¿½Ö¾ï¿½ï¿½Ö´Â°ï¿½
 		pm.setLastPage(service.total(cri));
 		mv.addObject("pm", pm);
 		mv.setViewName("board/noticeBoardList");
@@ -39,15 +39,51 @@ public class Cont {
 
 	@RequestMapping(value = "/nbcinsert")
 	public ModelAndView nbcinsert(ModelAndView mv, NCVO cvo, NBoardVO vo) {
-		// ÆÄ¶ó¹ÌÅÍ·Î ³Ñ¾î¿Â studentId, contents, seq°¡ NBoardVO¿¡ ¸ÊÇÎµÇ³ª? NCVO¿¡ ¸ÊÇÎµÇ³ª?
-		// ÀÏ´Ü cvo¿¡µµ ¸ÊÇÎµÈ´Ù°í »ý°¢ÇÏ°í ÇØº¸±â
-
 		System.out.println(cvo);
-		System.out.println(vo); 
+		System.out.println(vo);  
 
 		service.nbcinsert(cvo);
 		mv.setViewName("redirect:/nbdetail?seq=" + cvo.getSeq());
 		return mv;
 	}
-
+	
+	@RequestMapping(value = "/nbdelete")
+	public ModelAndView nbdelete(ModelAndView mv, NBoardVO vo) {
+		
+		service.nbdelete(vo);
+		
+		mv.setViewName("redirect:/nblist");
+		return mv;
+	}
+	
+	@RequestMapping(value = "/nbupdatef")
+	public ModelAndView nbupdatef(ModelAndView mv, NBoardVO vo) {
+		mv.addObject("vo",vo);
+		vo = service.nbdetail(vo);
+		mv.addObject("vo",vo);
+		mv.setViewName("board/noticeBoardUpdatef");
+		return mv;
+	}
+	@RequestMapping(value = "/nbupdate")
+	public ModelAndView nbupdate(ModelAndView mv, NBoardVO vo) {
+		
+		service.nbupdate(vo);
+		
+		mv.setViewName("redirect:/nblist");
+		return mv;
+	}
+	
+	@RequestMapping(value = "/nbinsertf")
+	public ModelAndView nbinsertf(ModelAndView mv, NBoardVO vo) {
+		mv.setViewName("board/noticeBoardInsert");
+		return mv;
+	}
+	@RequestMapping(value = "/nbinsert")
+	public ModelAndView nbinsert(ModelAndView mv, NBoardVO vo) {
+		service.nbinsert(vo);
+		mv.setViewName("redirect:/nblist");
+		
+		return mv;
+	}
+	
 }

@@ -36,4 +36,16 @@ public class BoardDAO {
 		return sqlSession.insert(NS+"nbcinsert",cvo);
 	}
 
+	public int nbdelete(NBoardVO vo) {
+		return sqlSession.delete(NS+"nbdelete",vo);
+	}
+
+	public int nbupdate(NBoardVO vo) {
+		return sqlSession.update(NS+"nbupdate", vo);
+	}
+
+	public int nbinsert(NBoardVO vo) {
+		return sqlSession.insert(NS+"nbinsert",vo);
+	}
+
 }
