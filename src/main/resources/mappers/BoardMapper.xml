@@ -37,12 +37,17 @@
 	</select>
 	
 	<select id="clist" resultType="vo.NCVO">
-	select * from boardComment where seq = #{seq}
+	select * from boardComment where seq = #{seq} order by root 
 	</select>
 	
 	<insert id="nbcinsert">
 		insert into boardComment values(
-		#{seq}, #{studentId}, #{contents},sysdate	)
+		#{seq}, 
+		#{studentId}, 
+		#{contents},
+		sysdate,
+		(select nvl(max(root),0)+1 from boardComment where seq=#{seq})
+			)
 	</insert>
 	
 	<delete id="nbdelete" >
@@ -63,6 +68,10 @@
 		#{studentId},
 		'A') 
 	</insert>
+	
+	<delete id="nbcdelete">
+		delete boardComment where seq=#{seq} and root=#{root}
+	</delete>
 	
 	
 </mapper>

@@ -48,4 +48,8 @@ public class BoardDAO {
 		return sqlSession.insert(NS+"nbinsert",vo);
 	}
 
+	public int nbcdelete(NCVO cvo) {
+		return sqlSession.delete(NS+"nbcdelete",cvo);
+	}
+
 }

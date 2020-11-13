@@ -5,7 +5,7 @@ public class SearchCri {
 	private int sno;
 	private int eno;
 	private int currPage = 1;
-	private int currPageRow = 17;
+	private int currPageRow = 15;
 	private String searchType;
 	private String keyword="";
 

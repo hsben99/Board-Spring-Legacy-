@@ -31,7 +31,9 @@
 		</header>
 		<main>
 		<div id="searchDiv">
-			<input type="button" value="글쓰기" onclick="location.href='nbinsertf'">
+			<div>
+				<input type="button" value="글쓰기" onclick="location.href='nbinsertf'">
+			</div>
 			<div>
 				<select id="searchType">
 					<option value="t">제목</option>
@@ -65,13 +67,21 @@
 		</div>
 		<div id="pagingDiv">
 			<div>
-				<button>이전</button>
+				<c:if test="${pm.prev}">
+					<button onclick="location.href='nblist?currPage=${pm.sPage-1}'"  id="prev">이전</button>
+				</c:if>
 				<c:forEach begin="${pm.sPage}" end="${pm.ePage }" var="i">
+				
+				<c:if  test="${pm.cri.currPage == i }">
+				<button onclick="location.href='nblist${pm.searchQuery(i)}'" style="background-color: gray">${i}</button>
+				</c:if>
+				<c:if  test="${pm.cri.currPage != i }">
 					<button onclick="location.href='nblist${pm.searchQuery(i)}'">${i}</button>
-
+			</c:if>
 				</c:forEach>
-
-				<button>다음</button>
+<c:if test="${pm.next}">
+				<button onclick="location.href='nblist?currPage=${pm.ePage+1}'" id="next">다음</button>
+				</c:if>
 			</div>
 
 		</div>

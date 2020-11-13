@@ -4,7 +4,7 @@
 <html lang="kn">
 <head>
 <link rel="stylesheet" href="resources/css/reset.css">
-<link rel="stylesheet" href="resources/css/board/nbupdatef.css">
+<link rel="stylesheet" href="resources/css/board/nbinsert.css">
 <meta charset="UTF-8">
 <title>수정!</title> 
 <style>
@@ -29,11 +29,10 @@
 				<table>
 					<tr>
 						<td>제 목</td>
-
 					</tr>
 					<tr>
 						<td>
-							<input type="text" name="title">
+							<input type="text" name="title" id="titleInput">
 						</td>
 					</tr>
 					<tr>

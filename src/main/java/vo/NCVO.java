@@ -6,6 +6,15 @@ public class NCVO {
 	private String studentId;
 	private String contents;
 	private String regDate;
+	private String root;
+
+	public String getRoot() {
+		return root;
+	}
+
+	public void setRoot(String root) {
+		this.root = root;
+	}
 
 	public int getSeq() {
 		return seq;
@@ -41,12 +50,8 @@ public class NCVO {
 
 	@Override
 	public String toString() {
-		return "NCVO [seq=" + seq + ", studentId=" + studentId + ", contents=" + contents + ", regDate=" + regDate
-				+ ", getSeq()=" + getSeq() + ", getStudentId()=" + getStudentId() + ", getContents()=" + getContents()
-				+ ", getRegDate()=" + getRegDate() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode()
-				+ ", toString()=" + super.toString() + "]";
+		return "NCVO [seq=" + seq + ", studentId=" + studentId + ", contents=" + contents + ", regDate=" + regDate + ", getSeq()=" + getSeq() + ", getStudentId()=" + getStudentId() + ", getContents()=" + getContents() + ", getRegDate()="
+				+ getRegDate() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
 	}
-	
-	
 
 }

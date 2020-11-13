@@ -26,6 +26,8 @@ public class PageMaker {
 		if (ePage > lastPage) {
 			ePage = lastPage;
 		}
+		prev= !((sPage - 1)<1);
+		next = (ePage+1) < lastPage;
 		
 
 	}

@@ -29,4 +29,7 @@ public interface BoardService {
 
 
 	public int nbinsert(NBoardVO vo);
+
+
+	public int nbcdelete(NCVO cvo);
 }

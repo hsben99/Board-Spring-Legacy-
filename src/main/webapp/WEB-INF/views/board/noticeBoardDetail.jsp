@@ -54,9 +54,10 @@
             </div>
             <div id="commentDiv">
             <c:forEach items="${clist}" var="clist">
-                <table>
-                    <tr>
-                        <td>${clist.studentId }<span>${clist.regDate}</span></td>
+                <table> 
+                    <tr>  
+                        <td>${clist.studentId }<span>${clist.regDate}</span>
+                        <a href="nbcdelete?seq=${clist.seq}&root=${clist.root}">x</a></td>
                     </tr>
                     <tr>
                         <td>${clist.contents}</td>

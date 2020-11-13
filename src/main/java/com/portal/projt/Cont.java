@@ -46,6 +46,13 @@ public class Cont {
 		mv.setViewName("redirect:/nbdetail?seq=" + cvo.getSeq());
 		return mv;
 	}
+	@RequestMapping(value = "/nbcdelete")
+	public ModelAndView nbcdelete(ModelAndView mv, NCVO cvo) {
+		
+		service.nbcdelete(cvo);
+		mv.setViewName("redirect:/nbdetail?seq=" + cvo.getSeq());
+		return mv;
+	}
 	
 	@RequestMapping(value = "/nbdelete")
 	public ModelAndView nbdelete(ModelAndView mv, NBoardVO vo) {

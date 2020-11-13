@@ -34,7 +34,7 @@
 					</tr>
 					<tr>
 						<td>
-							<input type="text" value="${vo.title}" name="title">
+							<input type="text" value="${vo.title}" name="title" id="titleInput">
 						</td>
 					</tr>
 					<tr>

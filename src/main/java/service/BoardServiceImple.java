@@ -55,4 +55,9 @@ public class BoardServiceImple implements BoardService {
 		return dao.nbinsert(vo);
 	}
 
+	@Override
+	public int nbcdelete(NCVO cvo) {
+		return dao.nbcdelete(cvo);
+	}
+
 }

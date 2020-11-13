@@ -1,8 +1,7 @@
-/*body,
+ /* body,
 td {
     background-color: darkslategray;
-}*/
-
+} */ 
 
 html {
     font-size: 62.5%;
@@ -15,7 +14,7 @@ body > div {
 }
 
 header {
-    background-image: url(../../image/head.jpg);
+    background-image: url(../image/head.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-color: white;
@@ -44,11 +43,11 @@ main {}
 
 #tableDiv {
     padding: 1rem;
-    background-color: white;
+    background-color: white; 
 
 }
 
-#tableDiv > table {
+#tableDiv>form> table { 
 
     width: 150rem;
     text-align: center;
@@ -57,6 +56,15 @@ main {}
     line-height: 3rem;
     background-color: #f9fafb;
 
+}
+
+#tableDiv #titleInput{
+	height: 3rem; 
+	width: 140rem;
+	font-size: 3rem;
+}
+#tableDiv>form> table textarea{
+	font-size: 2.5rem;
 }
 
 tr,
@@ -72,6 +80,16 @@ td {
 #tableDiv td > span {
     display: block;
     text-align: right;
+}
+
+#tableDiv>form> table + input{
+	display: block;
+	width: 8rem;
+    height: 4rem;
+    font-size: 1.7rem;
+    color: gray;
+	margin:  0 auto;
+	
 }
 
 tr:nth-of-type(2n) {
@@ -139,16 +157,9 @@ main > #commentDiv tr:nth-of-type(2n) {
     line-height: 4rem;
 }
 #commentDiv span{
-        margin-left: 110rem; 
+        margin-left: 112rem; 
 }
 
-#commentDiv a{
-	color: white; 
-	width:5rem;
-	float: right;
-	
-	
-}
 main > #commentInsertDiv {
     width: 150rem; 
     margin: 0 auto;

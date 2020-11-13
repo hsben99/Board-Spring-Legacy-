@@ -11,10 +11,10 @@ html {
 body > div {
     min-width: 150rem;
 
-}
+} 
 
 header {
-    background-image: url(../image/head.jpg);
+    background-image: url(../../image/head.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-color: white;
@@ -47,6 +47,7 @@ main {}
 
 }
 
+
 #tableDiv>form> table { 
 
     width: 150rem;
@@ -55,7 +56,13 @@ main {}
     font-size: 1.7rem;
     line-height: 3rem;
     background-color: #f9fafb;
-
+}
+ 
+#tableDiv #titleInput{
+	height: 3rem; 
+	width: 140rem;
+	font-size: 2.5rem;
+	text-align: center;
 }
 #tableDiv>form> table textarea{
 	font-size: 2.5rem;
